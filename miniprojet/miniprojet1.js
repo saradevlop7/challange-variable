@@ -111,7 +111,7 @@ while (true) {
             montrerinfo(tab)
             break;
         default:
-            console.log("invalid number");
+            console.log("invalid number"); 
 
 
 
