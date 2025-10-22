@@ -83,6 +83,7 @@ function aller(){
             console.log("quitter");
             break
         default:  
+$
             console.log("invalid choix");
         
     }
@@ -93,7 +94,7 @@ function aller(){
   } 
 
   aller()
-  
+
 
 
 
