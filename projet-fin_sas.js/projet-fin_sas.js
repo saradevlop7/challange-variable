@@ -1,8 +1,8 @@
 const prompt = require("prompt-sync")();
 //DECLARATION D'UNE TABLEAUX LIVRE
 let listlivres = [
-   { id_livre: 1, titre: "les misérables", auteur: "victor hugo",annee: 1862, disponible: true },
-   { id_livre: 2, titre: "L'Étranger", auteur: "Camus", annee: 1942, disponible: false }
+   { id_livre: 1, titre: "les misérables",annee: 1862, auteur: "victor hugo",  disponible: true },
+   { id_livre: 2, titre: "L'Étranger",annee: 1942, auteur: "Camus",  disponible: false }
 ];
 //CETTE FONCTION PERMET D AJOUTER UN NOUVEAUX LIVRE
 function ajouterunlivre() {
@@ -48,22 +48,7 @@ function showlivre() {
 
    }
 }
-//MENU DE CHOIX
-function menu() {
-   console.log("====Menu principal====");
-   console.log("1.Introduire un livre");
-   console.log("2.Ajouter plusieurs livres");
-   console.log("3.Afficher tous les livres");
-   console.log("4.trier leslivres par titre(ascendant/descendant)");
-   console.log("5.trier les livres par année de publication ");
-   console.log("6.Afficher uniquement les livres disponible");
-   console.log("7.Rechercher un livre par ID_Livre");
-   console.log("0.quitter");
 
-   let choix = Number(prompt("entr choix:"))
-   return choix
-
-}
 // HADI FUNCTION DRTHA BACH NRTAB 3LA HSAB TITRE MN A-Z OL3AKS 
 function trierParTitre(listlivres, ordre) {
    for (let i = 0; i < listlivres.length - 1; i++) {
@@ -103,48 +88,6 @@ function ordertrier() {
    }
 }
 
-//FUNCTION QUI DIT QUEL LIVRE DISPONIBLE
-function uniquement() {
-   let found = false;
-
-   for (let i = 0; i < livres.length; i++) {
-      if (livres[i].disponible === true) {
-         console.log("Titre :", livres[i].titre);
-         console.log("Auteur :", livres[i].auteur);
-         console.log("Année :", livres[i].annee);
-         console.log("Disponible :", livres[i].disponible);
-         console.log("------------");
-         found = true;
-      }
-   }
-
-   if (!found) {
-      console.log("aucun livres");
-   }
-}
-
-//FUNCTION QUI FAIT DES RECHERCHE
-function recherche() {
-   let res = Number(prompt("entre number recherche ID:"))
-   let resulte = 0;
-   for (let i = 0; i < listlivres.length; i++) {
-      if (listlivres[i].id_livre === res) {
-         resulte = listlivres[i];
-         break;
-      }
-
-   }
-   if (resulte) {
-      console.log("le livre trouvé:", resulte);
-
-   } else {
-      console.log(`le livre avec L'ID"${res}"n'a pas été trouvé.`);
-
-   }
-}
-
-
-
 //FUNCTION QUI TERIER LE LIVRE PAR ANNEE
 function trierParAnne(listlivres, ordre) {
    for (let i = 0; i < listlivres.length - 1; i++) {
@@ -182,6 +125,67 @@ function orderTrierparanne() {
          `ID: ${livre.id_livre}, Titre: ${livre.titre}, Auteur: ${livre.auteur}, Année: ${livre.annee}, Disponible: ${livre.disponible ? "Oui" : "Non"}`
       );
    }
+}
+
+//FUNCTION QUI DIT QUEL LIVRE DISPONIBLE
+function uniquement() {
+   let found = false;
+
+   for (let i = 0; i < listlivres.length; i++) {
+      if (listlivres[i].disponible === true) {
+         console.log("Titre :", listlivres[i].titre);
+         console.log("Auteur :", listlivres[i].auteur);
+         console.log("Année :", listlivres[i].annee);
+         console.log("Disponible :", listlivres[i].disponible);
+         console.log("------------");
+         found = true;
+      }
+   }
+
+   if (!found) {
+      console.log("aucun livres");
+   }
+}
+
+//FUNCTION QUI FAIT DES RECHERCHE
+function recherche() {
+   let res = Number(prompt("entre number recherche ID:"))
+   let resulte = 0;
+   for (let i = 0; i < listlivres.length; i++) {
+      if (listlivres[i].id_livre === res) {
+         resulte = listlivres[i];
+         break;
+      }
+
+   }
+   if (resulte) {
+      console.log("le livre trouvé:", resulte);
+
+   } else {
+      console.log(`le livre avec L'ID"${res}"n'a pas été trouvé.`);
+
+   }
+}
+
+
+
+
+
+//MENU DE CHOIX
+function menu() {
+   console.log("====Menu principal====");
+   console.log("1.Introduire un livre");
+   console.log("2.Ajouter plusieurs livres");
+   console.log("3.Afficher tous les livres");
+   console.log("4.trier leslivres par titre(ascendant/descendant)");
+   console.log("5.trier les livres par année de publication ");
+   console.log("6.Afficher uniquement les livres disponible");
+   console.log("7.Rechercher un livre par ID_Livre");
+   console.log("0.quitter");
+
+   let choix = Number(prompt("entr choix:"))
+   return choix
+
 }
 
 
