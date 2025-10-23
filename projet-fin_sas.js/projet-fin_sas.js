@@ -1,7 +1,7 @@
 const prompt = require("prompt-sync")();
 //DECLARATION D'UNE TABLEAUX LIVRE
 let listlivres = [
-   { id_livre: 1, titre: "les misérables", annee: 1862, auteur: "victor hugo", disponible: true },
+   { id_livre: 1, titre: "les misérables", auteur: "victor hugo",annee: 1862, disponible: true },
    { id_livre: 2, titre: "L'Étranger", auteur: "Camus", annee: 1942, disponible: false }
 ];
 //CETTE FONCTION PERMET D AJOUTER UN NOUVEAUX LIVRE
@@ -82,7 +82,7 @@ function trierParTitre(listlivres, ordre) {
       }
    }
 }
-
+//function qui permet de choisir le choix que tu veux 
 function ordertrier() {
    const choix = prompt("choisser les livre en  (1 - Ascendant (A→Z)/ 2 - Descendant (Z→A)): ");
 
@@ -103,7 +103,7 @@ function ordertrier() {
    }
 }
 
-
+//FUNCTION QUI DIT QUEL LIVRE DISPONIBLE
 function uniquement() {
    let found = false;
 
@@ -123,6 +123,7 @@ function uniquement() {
    }
 }
 
+//FUNCTION QUI FAIT DES RECHERCHE
 function recherche() {
    let res = Number(prompt("entre number recherche ID:"))
    let resulte = 0;
@@ -144,7 +145,7 @@ function recherche() {
 
 
 
-
+//FUNCTION QUI TERIER LE LIVRE PAR ANNEE
 function trierParAnne(listlivres, ordre) {
    for (let i = 0; i < listlivres.length - 1; i++) {
       for (let j = i + 1; j < listlivres.length; j++) {
@@ -162,7 +163,7 @@ function trierParAnne(listlivres, ordre) {
       }
    }
 }
-
+//FUNCTION QUI TRIER LES LIVRE PAR CHOIX D ANNEE
 function orderTrierparanne() {
    const choix = prompt("Choix ordre (1 - Ascendant / 2 - Descendant): ");
 
@@ -183,6 +184,8 @@ function orderTrierparanne() {
    }
 }
 
+
+//FUNCTION QUI PERMET TRAVALLER D'application
 function run() {
    let choix;
    do {
