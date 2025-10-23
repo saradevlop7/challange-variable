@@ -1,5 +1,4 @@
-const { log } = require("node:console");
-const { lookupService } = require("node:dns/promises");
+
 
 const prompt = require("prompt-sync")();
 let  = [
